@@ -31,10 +31,13 @@ drawerButton.addEventListener("click", function() {
 
     if (enteredCode === "1207") {
         drawerResult.textContent =
-            "The drawer unlocks! Inside, you find an ID card with your photograph, but the name has been scratched out.";
+          "The drawer unlocks! Inside, you find an ID card with your photograph, but the name has been scratched out.";
+
+        document.getElementById("ending-message").textContent =
+         "You have escaped the first mystery!";
             
-document.getElementById("clue-list").innerHTML +=
-    "<li>The ID card has your photograph, but its name is scratched out.</li>";
+        document.getElementById("clue-list").innerHTML +=
+          "<li>The ID card has your photograph, but its name is scratched out.</li>";
 
     } else {
         drawerResult.textContent =
