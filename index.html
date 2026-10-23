@@ -3,72 +3,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Curiosity Room</title>
-    
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
-    
-    <h1>WHO AM I?</h1>
 
-    <p>You wake up in a room you don't recognize.</p>
+    <main>
+        <section id="opening-scene" class="story-panel">
+            <p class="eyebrow">A PSYCHOLOGICAL MYSTERY</p>
+            <h1>WHO AM I?</h1>
 
-    <p>The door is locked. You have no memory of how you got here.</p>
-    
-    <h2> A Mysterious Note </h2>
+            <p class="story-text">
+                You wake up in a room you don't recognize.
+            </p>
+            <p class="story-text">
+                The door is locked. You have no memory of how you got here.
+            </p>
 
-    <p>"If you want to know who you are, look where time stands still."</p>
-    
-    <h2>A Stopped Clock</h2>
+            <p class="note-quote">
+                "If you want to know who you are, look where time stands still."
+            </p>
 
-    <p>An old clock hangs on the wall. Its hands are frozen at 12:00.</p>
+            <button id="start-button">Begin Investigation</button>
+        </section>
 
-    <p>Someone has scratched a number into the wood beneath it: 7.</p>
-    
-    <button id="clock-button">Investigate the Clock</button>
-    
-    <p id="clock-clue"></p>
-    
-    <h2>My Clue Notebook</h2>
+        <section id="investigation-scene" hidden>
+            <div id="dialogue-box" aria-live="polite">
+    <p id="dialogue-speaker">YOUR THOUGHTS</p>
+    <p id="dialogue-text">
+        The room is silent. You feel that something here is familiar.
+    </p>
+</div>
+            <header class="game-header">
+                <p class="eyebrow">CHAPTER ONE</p>
+                <h1>The Curiosity Room</h1>
+                <p class="story-text">
+                    Every object hides a fragment of your past.
+                    Look carefully. Trust nothing too quickly.
+                </p>
+            </header>
 
-    <ul id="clue-list">
-        <li>The clock is stopped at 12:00.</li>
-    </ul>
-    
-    <h2>A Mysterious Photograph</h2>
+            <section class="clue-section">
+                <h2>A Mysterious Note</h2>
+                <p>
+                    A folded note lies on the desk. Its handwriting
+                    feels strangely familiar.
+                </p>
+                <blockquote>
+                    "If you want to know who you are, look where time stands still."
+                </blockquote>
+            </section>
 
-    <p>You find a photograph of a person standing in front of this room.</p>
+            <section class="clue-section">
+                <h2>A Stopped Clock</h2>
+                <p>
+                    An old clock hangs on the wall. Its hands are frozen at 12:00.
+                </p>
+                <p>Someone scratched the number 7 into the wood beneath it.</p>
+                <button id="clock-button">Investigate the Clock</button>
+                <p id="clock-clue" class="result-message" aria-live="polite"></p>
+            </section>
 
-    <p>Their face looks strangely familiar, but you cannot remember their name.</p>
+            <section class="clue-section">
+                <h2>My Clue Notebook</h2>
+                <ul id="clue-list">
+                    <li>The clock is stopped at 12:00.</li>
+                </ul>
+            </section>
 
-    <button id="photo-button">Investigate the Photograph</button>
+            <section class="clue-section">
+                <h2>A Mysterious Photograph</h2>
+                <p>
+                    A photograph shows someone standing in front of this room.
+                    Their face looks like yours.
+                </p>
+                <button id="photo-button">Investigate the Photograph</button>
+                <p id="photo-clue" class="result-message" aria-live="polite"></p>
+            </section>
 
-    <p id="photo-clue"></p>
-    
-    <h2>A Locked Drawer</h2>
+            <section class="clue-section">
+                <h2>A Locked Drawer</h2>
+                <p>A wooden drawer has a four-digit combination lock.</p>
+                <p class="hint">An engraving reads: "The hour you cannot forget."</p>
 
-    <p>A wooden drawer has a four-digit combination lock.</p>
+                <label for="drawer-code">Enter the four-digit code:</label>
+                <div class="input-row">
+                    <input
+                        type="text"
+                        id="drawer-code"
+                        maxlength="4"
+                        inputmode="numeric"
+                        placeholder="0000"
+                    >
+                    <button id="drawer-button">Unlock Drawer</button>
+                </div>
 
-    <p>A small engraving reads: "The hour you cannot forget."</p>
+                <p id="drawer-result" class="result-message" aria-live="polite"></p>
+                <p id="symbol-clue" class="result-message" aria-live="polite"></p>
+            </section>
 
-    <label for="drawer-code">Enter the four-digit code:</label>
+            <section class="clue-section">
+                <h2>A Locked Door</h2>
+                <p>
+                    A heavy wooden door blocks your escape.
+                    A crescent moon (☾) is carved into its lock.
+                </p>
+                <button id="door-button">Investigate the Door</button>
+                <p id="door-message" class="result-message" aria-live="polite"></p>
+            </section>
 
-    <input type="text" id="drawer-code" maxlength="4" placeholder="Enter code">
-
-    <button id="drawer-button">Unlock the Drawer</button>
-
-    <p id="drawer-result"></p>
-    <h2>A Strange Symbol</h2>
-    <p id="symbol-clue"></p>
-    <h2>A Locked Door</h2>
-    <p>A heavy wooden door blocks your escape. A crescent moon (☾) is carved into its lock.</p>
-    <button id="door-button">Investigate the Door</button>
-    <p id="door-message"></p>
-
+        </section>
+    </main>
 
     <script src="script.js"></script>
-
-
 </body>
 </html>
