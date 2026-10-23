@@ -32,7 +32,8 @@ drawerButton.addEventListener("click", function() {
     if (enteredCode === "1207") {
         drawerResult.textContent =
           "The drawer unlocks! Inside, you find an ID card with your photograph, but the name has been scratched out.";
-
+        document.getElementById("symbol-clue").textContent =
+          "A crescent moon symbol (☾) is engraved on the back of the ID card.";
         document.getElementById("ending-message").textContent =
          "You have escaped the first mystery!";
             
@@ -43,4 +44,10 @@ drawerButton.addEventListener("click", function() {
         drawerResult.textContent =
             "The drawer remains locked. Re-examine the clues!";
     }
+});
+const doorButton = document.getElementById("door-button");
+
+doorButton.addEventListener("click", function() {
+    document.getElementById("door-message").textContent =
+        "The crescent moon on the door matches the symbol on your ID card. There must be a way to unlock it!";
 });
